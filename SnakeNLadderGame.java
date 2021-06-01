@@ -48,6 +48,9 @@ public class SnakeNLadderGame {
 				playerPosition = 86;
 				System.out.println("LUCKY!! YOU GOT A LADDER.");
 				System.out.println("YUPP!! Now, You are at " + playerPosition + " position.");
+			} else if (playerPosition > 100) {
+				playerPosition = playerPosition - diceRoll;
+				System.out.println("OHH!! YOU CAN'T JUMP, YOU MUST LAND ON A 100.");
 			}
 		}
 	}
