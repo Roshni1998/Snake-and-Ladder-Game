@@ -3,18 +3,22 @@ package com.SnakeAndLadder;
 public class SnakeNLadderGame {
 
 	public static void main(String[] args) {
+		int playerPosition = 1;
 		int diceRoll = 0;
 		int SnakeArray[] = { 54, 90, 99 };
 		int LadderArray[] = { 9, 40, 67 };
 		System.out.println("Welcome to the Game of SNAKE & LADDER");
 		System.out.println("Starting Position of the Player = 0");
-		for (int playerPosition = 1; playerPosition <= 100; playerPosition++) {
+		for (playerPosition = 1; playerPosition <= 100; playerPosition++) {
 			double randomnumber = (double) (Math.random() * 6);
 			diceRoll = (int) randomnumber;
 			System.out.println("Dice Number =" + " " + diceRoll);
 			playerPosition = playerPosition + diceRoll;
 			playerPosition = playerPosition - 1;
 			System.out.println("Current Position =" + " " + playerPosition);
+			if (playerPosition == 100) {
+				System.out.println("CONGRATULATION!! YOU WON THE GAME.");
+			}
 			if (diceRoll == 0) {
 				playerPosition = playerPosition - diceRoll;
 				System.out.println("You have to stay on the same position!!");
@@ -47,4 +51,5 @@ public class SnakeNLadderGame {
 			}
 		}
 	}
+
 }
